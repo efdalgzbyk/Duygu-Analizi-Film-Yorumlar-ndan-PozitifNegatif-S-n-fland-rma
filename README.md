@@ -60,3 +60,64 @@ This project performs sentiment analysis on IMDb movie reviews, classifying each
 
 ```bash
 python sentiment_analysis_imdb.py
+```
+
+```markdown
+# IMDb Film Yorumları ile Duygu Analizi (Pozitif/Negatif)
+
+Bu projede, IMDb film yorumları veri seti kullanılarak bir yorumun **olumlu (pozitif)** veya **olumsuz (negatif)** olup olmadığını tahmin eden bir **Lojistik Regresyon** modeli geliştirildi.
+
+---
+
+## 🔍 Kullanılan Veri Seti
+
+- **IMDb Movie Reviews** (TensorFlow üzerinden otomatik yüklenir)
+- 50.000 adet yorum (25K eğitim, 25K test)
+- Her yorum ya 1 (pozitif) ya da 0 (negatif) olarak etiketlenmiştir
+
+---
+
+## 🛠 Kullanılan Teknolojiler
+
+- Python 3.x
+- TensorFlow (veri yükleme)
+- Scikit-learn (modelleme)
+- Matplotlib & Seaborn (grafik)
+- Joblib (model kaydı)
+
+---
+
+## 🚀 Proje Akışı
+
+1. **Veri yükleme ve ön işleme**  
+   - En sık geçen 10.000 kelime kullanıldı  
+   - Yorumlar 200 kelimeye sabitlendi (padding)
+
+2. **Model Eğitimi**  
+   - Lojistik regresyon ile metin sınıflandırması yapıldı  
+   - Eğitim ve test verileri ayrı tutuldu
+
+3. **Değerlendirme**  
+   - Doğruluk oranı, sınıflandırma raporu ve karışıklık matrisi kullanıldı  
+   - Başarı görselleştirildi
+
+4. **Model Kaydı**  
+   - Eğitim sonrası model `imdb_sentiment_model.pkl` olarak kaydedildi
+
+---
+
+## 📁 Oluşan Dosyalar
+
+| Dosya Adı                     | Açıklama                                      |
+|------------------------------|-----------------------------------------------|
+| `sentiment_analysis_imdb.py` | Ana Python dosyası                            |
+| `imdb_sentiment_model.pkl`   | Eğitilmiş model                               |
+| `imdb_confusion_matrix.png`  | Karışıklık matrisi grafiği (başarı görseli)   |
+
+---
+
+## 💻 Çalıştırmak için
+
+```bash
+python sentiment_analysis_imdb.py
+
